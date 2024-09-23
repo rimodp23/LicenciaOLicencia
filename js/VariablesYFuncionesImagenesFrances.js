@@ -288,10 +288,25 @@ function PracticarUnoNuevo()
 				while (ok == false)
 				{
 					elnumeroRandomOtros = Math.floor(Math.random()*(unasPalabrasDinamicas.length-1+1)+1) - 1;
-					if ($("#lrbtn" + i).text() != unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida)
+					var j;
+					for (j = 1; j <= cantidadRadioButton; j++) 
+					{ 
+						if (j != i)
+						{
+							if ($("#lrbtn" + j).text() != unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida)
+							{
+								ok = true;
+							}
+							else
+							{
+								ok = false;
+								break;
+							}
+						}
+					}
+					if(ok == true)		
 					{
 						$("#lrbtn" + i).text(unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida);
-						ok = true;
 					}
 				}
 			}
@@ -318,10 +333,25 @@ function PracticarUnoNuevo()
 				while (ok == false)
 				{
 					elnumeroRandomOtros = Math.floor(Math.random()*(unasPalabrasDinamicas.length-1+1)+1) - 1;
-					if ($("#lrbtn" + i).text() != unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa)
+					var j;
+					for (j = 1; j <= cantidadRadioButton; j++) 
+					{ 
+						if (j != i)
+						{
+							if ($("#lrbtn" + j).text() != unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa)
+							{
+								ok = true;
+							}
+							else
+							{
+								ok = false;
+								break;
+							}
+						}
+					}
+					if(ok == true)		
 					{
 						$("#lrbtn" + i).text(unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa);
-						ok = true;
 					}
 				}
 			}
