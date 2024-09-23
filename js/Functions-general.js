@@ -1,10 +1,37 @@
+var unasPalabras = [];
+var cantidadPalabras = 0;
+var palabra;
+var palabraUsada;
+var palabrasUsadas = [];;
+var elnumeroRandom;
+var elnumeroRandomOtros;
+var seleccionadoNativo = 0; //0 nativo ; 1 Nuevo
+var cantidadRadioButton = 5;
+
 function PracticarUnoNuevo()
 {
     seleccionadoNativo = 0; //0 nativo ; 1 Nuevo
 	var rbtnSeleccionado = 0;
+	var ok = false;//para no repetir opciones
+	
 	elnumeroRandom = Math.floor(Math.random()*(cantidadPalabras-1+1)+1) - 1;
 	seleccionadoNativo = Math.floor(Math.random()*(2-1+1)+1) - 1;//Random de si aparece palabra nativa o no
 	rbtnSeleccionado = Math.floor(Math.random()*(cantidadRadioButton-1+1)+1);//Math.floor(Math.random()*(max-min+1)+min);
+	
+	for (k = 0; k <= palabrasUsadas.length -1; k++) 
+	{ 
+		if (palabrasUsadas[k].PalabraNativa != unasPalabras[elnumeroRandom].PalabraNativa)
+		{
+			ok = true;
+		}
+		else
+		{
+			ok = false;
+			k=0;
+			elnumeroRandom = Math.floor(Math.random()*(cantidadPalabras-1+1)+1) - 1;
+		}
+	}
+					
 	if (seleccionadoNativo == 0)
 	{
 		$("#lblSeleccionado").text(unasPalabras[elnumeroRandom].PalabraNativa);
@@ -22,7 +49,7 @@ function PracticarUnoNuevo()
 		{ 
 			if (i != rbtnSeleccionado)
 			{
-				var ok = false;//para no repetir opciones
+				ok = false;//para no repetir opciones
 				while (ok == false)
 				{
 					elnumeroRandomOtros = Math.floor(Math.random()*(unasPalabrasDinamicas.length-1+1)+1) - 1;
@@ -45,6 +72,7 @@ function PracticarUnoNuevo()
 					if(ok == true)		
 					{
 						$("#lrbtn" + i).text(unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida);
+						palabraUsada = { PalabraNativa:unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa	, PalabraTraducida:	unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida}; palabrasUsadas.push(palabraUsada);
 					}
 				}
 			}
@@ -90,6 +118,7 @@ function PracticarUnoNuevo()
 					if(ok == true)		
 					{
 						$("#lrbtn" + i).text(unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa);
+						palabraUsada = { PalabraNativa:unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa	, PalabraTraducida:	unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida}; palabrasUsadas.push(palabraUsada);
 					}
 				}
 			}
