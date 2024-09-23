@@ -49,10 +49,15 @@
 	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 	<script type="text/javascript">
-        var s = document.createElement('script');
-        s.type = "text/javascript";
+        var r = document.createElement('script');
+		var s = document.createElement('script');
 		var url_string = window.location.href;
 		var url = new URL(url_string);
+		
+        r.type = "text/javascript";	       
+        s.type = "text/javascript";		
+		r.src = "js/Functions-general.js";
+		
 		if(url.searchParams.get("Idioma")== 1)
 		{
 			if(url.searchParams.get("Ejercita") == 3)
@@ -72,7 +77,7 @@
 			}
 		}
 
-		
+		document.body.appendChild(r);
         document.body.appendChild(s);
     </script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
