@@ -36,9 +36,10 @@ Cuando toco en boton de una red social que pasa? se abre la red social? veo solo
 </div>
 
 <span id="label1" style="display:inline-block;height:24px;width:300px;z-index:106; left:17%; top:102px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">Que desea ejercitar:</span>
-<input type="submit" name="btnVerbos" value="Verbos" id="Verbos" lÍmites="" onClick="ATipoJuego(1)" style="visibility:hidden;height:48px;width:140px;z-index:107; left:4%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
+<input type="submit" name="btnVerbosFrances" value="Verbos Frances" id="VerbosFrances" lÍmites="" onClick="ATipoJuego(1)" style="visibility:hidden;height:48px;width:140px;z-index:107; left:4%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
 <input type="submit" name="btnVerbosConImagenes" value="Verbos Con Imagenes" id="VerbosConImagenes" lÍmites="" onClick="ATipoJuego(2)" style="visibility:hidden;height:48px;width:140px;z-index:107; left:36%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute; white-space: normal">
-<input type="submit" name="btnPhrasal" value="Phrasal" id="Phrasal" de="" 10="" onClick="ATipoJuego(3)" style="visibility:hidden;height:48px;width:140px;z-index:108; left:68%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
+<input type="submit" name="btnVerbosIngles" value="Verbos en Ingles" id="VerbosIngles" lÍmites="" onClick="ATipoJuego(4)" style="visibility:hidden;height:48px;width:140px;z-index:107; left:4%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
+<input type="submit" name="btnPhrasal" value="Phrasal Verbs" id="PhrasalVerbs" de="" 10="" onClick="ATipoJuego(3)" style="visibility:hidden;height:48px;width:140px;z-index:108; left:68%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
 
 <script type="text/javascript" src="js/framework7.js"></script>
 <script type="text/javascript" src="js/kitchen-sink.js"></script>
@@ -50,15 +51,17 @@ $(function () {
 	
 	if(url.searchParams.get("Idioma") == 1)
 	{
-		document.getElementById('Verbos').style.visibility='hidden';
+		document.getElementById('VerbosFrances').style.visibility='hidden';
 		document.getElementById('VerbosConImagenes').style.visibility='hidden';
-		document.getElementById('Phrasal').style.visibility='visible';
+		document.getElementById('PhrasalVerbs').style.visibility='visible';
+		document.getElementById('VerbosIngles').style.visibility='visible';
 	};
 	if(url.searchParams.get("Idioma") == 2)
 	{
-		document.getElementById('Verbos').style.visibility='visible';
-		document.getElementById('Phrasal').style.visibility='hidden';
+		document.getElementById('VerbosFrances').style.visibility='visible';
+		document.getElementById('PhrasalVerbs').style.visibility='hidden';
 		document.getElementById('VerbosConImagenes').style.visibility='visible';
+		document.getElementById('VerbosIngles').style.visibility='hidden';
 	};
 });
 
