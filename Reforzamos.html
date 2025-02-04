@@ -40,6 +40,7 @@ Cuando toco en boton de una red social que pasa? se abre la red social? veo solo
 <input type="submit" name="btnVerbosConImagenes" value="Verbos Con Imagenes" id="VerbosConImagenes" lÍmites="" onClick="ATipoJuego(2)" style="visibility:hidden;height:48px;width:140px;z-index:107; left:36%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute; white-space: normal">
 <input type="submit" name="btnVerbosIngles" value="Verbos en Ingles" id="VerbosIngles" lÍmites="" onClick="ATipoJuego(4)" style="visibility:hidden;height:48px;width:140px;z-index:107; left:4%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
 <input type="submit" name="btnPhrasal" value="Phrasal Verbs" id="PhrasalVerbs" de="" 10="" onClick="ATipoJuego(3)" style="visibility:hidden;height:48px;width:140px;z-index:108; left:68%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
+<input type="submit" name="btnSeñalamiento" value="Señalamiento" id="Señalamiento" lÍmites="" onClick="ATipoJuego(5)" style="visibility:hidden;height:48px;width:140px;z-index:107; left:4%; top:133px; font-family:'Microsoft Sans Serif'; font-size:12pt; position:absolute;">
 
 <script type="text/javascript" src="js/framework7.js"></script>
 <script type="text/javascript" src="js/kitchen-sink.js"></script>
@@ -55,6 +56,7 @@ $(function () {
 		document.getElementById('VerbosConImagenes').style.visibility='hidden';
 		document.getElementById('PhrasalVerbs').style.visibility='visible';
 		document.getElementById('VerbosIngles').style.visibility='visible';
+		document.getElementById('Señalamiento').style.visibility='hidden';
 	};
 	if(url.searchParams.get("Idioma") == 2)
 	{
@@ -62,6 +64,16 @@ $(function () {
 		document.getElementById('PhrasalVerbs').style.visibility='hidden';
 		document.getElementById('VerbosConImagenes').style.visibility='visible';
 		document.getElementById('VerbosIngles').style.visibility='hidden';
+		document.getElementById('Señalamiento').style.visibility='hidden';
+	};
+	
+	if(url.searchParams.get("Idioma") == 3)
+	{
+		document.getElementById('VerbosFrances').style.visibility='hidden';
+		document.getElementById('PhrasalVerbs').style.visibility='hidden';
+		document.getElementById('VerbosConImagenes').style.visibility='hidden';
+		document.getElementById('VerbosIngles').style.visibility='hidden';
+		document.getElementById('Señalamiento').style.visibility='visible';
 	};
 });
 
