@@ -71,13 +71,21 @@
 		}
 		else
 		{
-			if(url.searchParams.get("Ejercita") == 1)
+			if(url.searchParams.get("Idioma")== 2)
 			{
-				s.src = "js/VariablesYFuncionesVerbosFrances.js";
+				if(url.searchParams.get("Ejercita") == 1)
+				{
+					s.src = "js/VariablesYFuncionesVerbosFrances.js";
+				}
+				if(url.searchParams.get("Ejercita") == 2)
+				{
+					s.src = "js/VariablesYFuncionesImagenesFrances.js";
+				}
 			}
-			if(url.searchParams.get("Ejercita") == 2)
+			else
 			{
-				s.src = "js/VariablesYFuncionesImagenesFrances.js";
+				document.getElementById('lblSeleccionado').style.visibility='hidden';
+				s.src = "js/VariablesYFuncionesSeñalamiento.js";
 			}
 		}
 
