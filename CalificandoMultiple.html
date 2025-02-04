@@ -20,9 +20,18 @@
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="86C42FDD" />
 	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAeV/1sAcLgvnsGfXliQAbD0ONDdy3Jtmjyk4HvO3yuP6/OO/Z7g8BIkRhXUW16TP6H+SX61y5UbCwXtriChbZ/9TbliCAHx5kCMzjfBLTKGr6nfSQ1cQW8lYISbjzuZ8PgjjOJQ5nvY0TyVUqD5neAjmEkPLyFMdr2Ejg5Oqfd3lwl4oBRTi2cDQvc8WCYNGwQ=" />
 </div>
+<div class="row">
+<img id="image" src="" style="height: 50%; left: 50%; position:absolute;">
+</div>
+
+<div class="row">
+<span  id="lblEstado" style="display:inline-block;height:34px;width:101px;z-index:107; left:50%; top:9px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;">0/1</span>
+</div>
+
 <span id="lblResultado" style="display:inline-block;height:22px;width:81px;z-index:100; left:23px; top:86px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;"></span>
 <fieldset id="groupBox1" style="POSITION: absolute; left: 8%; top: 118px; width:350px; height: 264px">
 <legend style="Z-INDEX: 101; color:black; font-family:'Microsoft Sans Serif'; font-size:40pt; width=">Opciones</legend>
+
 <div class="row">
 <input id="rbtn1"  type="radio" onchange="radioChanged($(this))" style="height: 40px !important;margin: -2px 0 0;width: 40px;position: absolute;"/><label id="lrbtn1"class="form-control-label" style="height: 45px;width: max-content;font-size:30pt;large;margin-left: 60px;"></label> 
 </div>
@@ -40,9 +49,9 @@
 </div>
 
 </fieldset>
-<span  id="lblEstado" style="display:inline-block;height:34px;width:101px;z-index:107; left:190px; top:9px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;">0/1</span>
-<span id="lblSeleccionado" style="display:inline-block;height:45px;width:1000px;z-index:108; left:12px; top:47px; font-family:'Comic Sans MS'; font-size:40pt; font-weight: bold; position:absolute;"></span>
-<img id="image" src="" style="left: 60%; position:absolute;">
+
+<span id="lblSeleccionado" style="display:inline-block;height:45px;width:1000px;z-index:108; left:50%; top:47px; font-family:'Comic Sans MS'; font-size:40pt; font-weight: bold; position:absolute;"></span>
+
 <input type="button" class="btn-xs" onclick="Calificar()" name="btnCalificar" value="Calificar" id="btnCalificar" style="height:100px;width:250px;z-index:109; left: 140px; top: 500px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;" />
 <script type="text/javascript" src="js/framework7.js"></script>
     <script type="text/javascript" src="js/kitchen-sink.js"></script>
