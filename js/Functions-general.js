@@ -39,7 +39,7 @@ function PracticarUnoNuevo()
 		
 		//imagen
 		var image = document.getElementById('image');
-		image.src = 'img/Verbos/' + unasPalabras[elnumeroRandom].PalabraIngles + '.png';
+		image.src = 'img/ImagenesTeoricoLicenciaConducir/' + unasPalabras[elnumeroRandom].PalabraIngles + '.png';
 		//imagen
 		
 		var unasPalabrasDinamicas = unasPalabras;
@@ -85,7 +85,7 @@ function PracticarUnoNuevo()
 		
 		//imagen
 		var image = document.getElementById('image');
-		image.src = 'img/Verbos/' + unasPalabras[elnumeroRandom].PalabraIngles + '.png';
+		image.src = 'img/ImagenesTeoricoLicenciaConducir/' + unasPalabras[elnumeroRandom].PalabraIngles + '.png';
 		//imagen		
 
 		var unasPalabrasDinamicas = unasPalabras;
