@@ -1,64 +1,76 @@
-
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
-<HTML>
-<HEAD>
-<title>RIMO DICCIONARIO</title>
-<meta name="GENERATOR" Content="form.suite4.net">
-<meta name="CODE_LANGUAGE" Content="C#">
-<meta name="vs_defaultClientScript" content="JavaScript">
-<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
-<meta charset="UTF-8">
-</HEAD>
+<html lang="es">
+<head>
+    <title>RIMO DICCIONARIO</title>
+    <meta name="GENERATOR" Content="form.suite4.net">
+    <meta name="CODE_LANGUAGE" Content="C#">
+    <meta name="vs_defaultClientScript" content="JavaScript">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
 <body MS_POSITIONING="GridLayout">
-<div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTg1NjYyMzEwMmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgoFBXJidG41BQVyYnRuNQUFcmJ0bjQFBXJidG40BQVyYnRuMwUFcmJ0bjMFBXJidG4yBQVyYnRuMgUFcmJ0bjEFBXJidG4xe/dIjVc3l45PlIIPDZZ5AMqq70yPANjhhqKOEdtqsqA=" />
-</div>
+    <div class="container">
+        <div class="row justify-content-center">
+                <img id="image" src="" class="" style="height: 200px">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <span id="lblResultado" style="display:inline-block;height:22px;width:81px;z-index:100; left:23px; top:86px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;"></span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <span id="lblEstado" class="display-4">0/1</span>
+            </div>
+        </div>
 
-<div class="aspNetHidden">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <fieldset class="border p-2">
+                    <legend class="w-auto">Opciones</legend>
+                    <div class="form-check">
+                        <input id="rbtn1" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+                        <label id="lrbtn1" class="form-check-label h4" style="margin-left:40px": 60px></label>
+                    </div>
+                    <div class="form-check">
+                        <input id="rbtn2" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+                        <label id="lrbtn2" class="form-check-label h4" style="margin-left:40px"></label>
+                    </div>
+                    <div class="form-check">
+                        <input id="rbtn3" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+                        <label id="lrbtn3" class="form-check-label h4" style="margin-left:40px"></label>
+                    </div>
+                    <div class="form-check">
+                        <input id="rbtn4" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+                        <label id="lrbtn4" class="form-check-label h4" style="margin-left:40px"></label>
+                    </div>
+                    <div class="form-check">
+                        <input id="rbtn5" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+                        <label id="lrbtn5" class="form-check-label h4" style="margin-left:40px"></label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
 
-	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="86C42FDD" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAeV/1sAcLgvnsGfXliQAbD0ONDdy3Jtmjyk4HvO3yuP6/OO/Z7g8BIkRhXUW16TP6H+SX61y5UbCwXtriChbZ/9TbliCAHx5kCMzjfBLTKGr6nfSQ1cQW8lYISbjzuZ8PgjjOJQ5nvY0TyVUqD5neAjmEkPLyFMdr2Ejg5Oqfd3lwl4oBRTi2cDQvc8WCYNGwQ=" />
-</div>
-<div class="row">
-<img id="image" src="" style="height: 50%; left: 50%; position:absolute;">
-</div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <span id="lblSeleccionado" class="display-4 font-weight-bold"></span>
+            </div>
+        </div>
 
-<div class="row">
-<span  id="lblEstado" style="display:inline-block;height:34px;width:101px;z-index:107; left:50%; top:9px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;">0/1</span>
-</div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <input type="button" class="btn btn-primary btn-lg" onclick="Calificar()" name="btnCalificar" value="Calificar" id="btnCalificar" />
+            </div>
+        </div>
+    </div>
 
-<span id="lblResultado" style="display:inline-block;height:22px;width:81px;z-index:100; left:23px; top:86px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;"></span>
-<fieldset id="groupBox1" style="POSITION: absolute; left: 8%; top: 118px; width:350px; height: 264px">
-<legend style="Z-INDEX: 101; color:black; font-family:'Microsoft Sans Serif'; font-size:40pt; width=">Opciones</legend>
-
-<div class="row">
-<input id="rbtn1"  type="radio" onchange="radioChanged($(this))" style="height: 40px !important;margin: -2px 0 0;width: 40px;position: absolute;"/><label id="lrbtn1"class="form-control-label" style="height: 45px;width: max-content;font-size:30pt;large;margin-left: 60px;"></label> 
-</div>
-<div class="row">
-<input id="rbtn2"  type="radio" onchange="radioChanged($(this))" style="height: 40px !important;margin: -2px 0 0;width: 40px;position: absolute;"/><label id="lrbtn2" class="form-control-label" style="height: 45px;width: max-content;font-size:30pt; large;margin-left: 60px;"></label>
-</div>
-<div class="row">
-<input id="rbtn3"  type="radio" onchange="radioChanged($(this))" style="height: 40px !important;margin: -2px 0 0;width: 40px;position: absolute;"/><label id="lrbtn3" class="form-control-label" style="height: 45px;width: max-content;font-size:30pt;large;margin-left: 60px;"></label>
-</div>
-<div class="row">
-<input id="rbtn4"  type="radio" onchange="radioChanged($(this))" style="height: 40px !important;margin: -2px 0 0;width: 40px;position: absolute;"/><label id="lrbtn4" class="form-control-label" style="height: 45px;width: max-content;font-size:30pt; large;margin-left: 60px;"></label>
-</div>
-<div class="row">
-<input id="rbtn5"  type="radio" onchange="radioChanged($(this))" style="height: 40px !important;margin: -2px 0 0;width: 40px;position: absolute;"/><label id="lrbtn5" class="form-control-label" style="height: 45px;width: max-content;font-size:30pt; large;margin-left: 60px;"></label>
-</div>
-
-</fieldset>
-
-<span id="lblSeleccionado" style="display:inline-block;height:45px;width:1000px;z-index:108; left:50%; top:47px; font-family:'Comic Sans MS'; font-size:40pt; font-weight: bold; position:absolute;"></span>
-
-<input type="button" class="btn-xs" onclick="Calificar()" name="btnCalificar" value="Calificar" id="btnCalificar" style="height:100px;width:250px;z-index:109; left: 140px; top: 500px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;" />
-<script type="text/javascript" src="js/framework7.js"></script>
-    <script type="text/javascript" src="js/kitchen-sink.js"></script>
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-	<script type="text/javascript">
-        var r = document.createElement('script');
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+         var r = document.createElement('script');
 		var s = document.createElement('script');
 		var url_string = window.location.href;
 		var url = new URL(url_string);
@@ -100,10 +112,11 @@
 
 		document.body.appendChild(r);
         document.body.appendChild(s);
-    </script>
+    </script
+<script type="text/javascript" src="js/framework7.js"></script>
+    <script type="text/javascript" src="js/kitchen-sink.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 </body>
-</HTML>
-
-
-  
+</html>
