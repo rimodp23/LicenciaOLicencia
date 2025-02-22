@@ -1,39 +1,30 @@
 var unasPalabras = [];
-var cantidadPalabras = 0;
+var unasPalabrasRadioButtonDisponibles = [];
 var palabra;
-var palabraUsada;
-var palabrasUsadas = [];;
 var elnumeroRandom;
-var elnumeroRandomOtros;
+var elnumeroRandomRadioButton;
 var seleccionadoNativo = 0; //0 nativo ; 1 Nuevo
 var cantidadRadioButton = 5;
+
+var STOPTEMPORAL = 180; //Como hay 4 exactamente imagenes que no arreglamos por el tema del nombre, esta variable sera nuestro contador de todas las palabras
 
 function PracticarUnoNuevo()
 {
     seleccionadoNativo = 0; //0 nativo ; 1 Nuevo
 	var rbtnSeleccionado = 0;
-	var ok = false;//para no repetir opciones
+	var ok;//para no repetir opciones
+	var k;//para no repetir opciones
 	
-	elnumeroRandom = Math.floor(Math.random()*(cantidadPalabras-1+1)+1) - 1;
+	unasPalabrasRadioButtonDisponibles = unasPalabras.slice();
+	
+	elnumeroRandom = Math.floor(Math.random()*(unasPalabras.length -1+1)+1) - 1;	
+	
 	seleccionadoNativo = Math.floor(Math.random()*(2-1+1)+1) - 1;//Random de si aparece palabra nativa o no
-	rbtnSeleccionado = Math.floor(Math.random()*(cantidadRadioButton-1+1)+1);//Math.floor(Math.random()*(max-min+1)+min);
+	rbtnSeleccionado = Math.floor(Math.random()*(cantidadRadioButton-1+1)+1);//Math.floor(Math.random()*(max-min+1)+min);	
 	
-	for (k = 0; k <= palabrasUsadas.length -1; k++) 
-	{ 
-		if (palabrasUsadas[k].PalabraNativa != unasPalabras[elnumeroRandom].PalabraNativa)
-		{
-			ok = true;
-		}
-		else
-		{
-			ok = false;
-			k=0;
-			elnumeroRandom = Math.floor(Math.random()*(cantidadPalabras-1+1)+1) - 1;
-		}
-	}
-					
 	if (seleccionadoNativo == 0)
 	{
+					
 		$("#lblSeleccionado").text(unasPalabras[elnumeroRandom].PalabraNativa);
 		$("#lrbtn" +  (rbtnSeleccionado)).text(unasPalabras[elnumeroRandom].PalabraTraducida);
 		
@@ -42,39 +33,29 @@ function PracticarUnoNuevo()
 		image.src = 'img/ImagenesTeoricoLicenciaConducir/' + unasPalabras[elnumeroRandom].PalabraIngles + '.png';
 		//imagen
 		
-		var unasPalabrasDinamicas = unasPalabras;
+		k = 0;
+		ok = false;	
+		
+		while (ok == false)
+		{
+			if(unasPalabrasRadioButtonDisponibles[k].PalabraNativa == unasPalabras[elnumeroRandom].PalabraNativa)
+			{
+				unasPalabrasRadioButtonDisponibles.splice(elnumeroRandom, 1); 
+				ok= true;
+			}
+			
+			k= k + 1;
+		}				
 		
 		var i;
 		for (i = 1; i <= cantidadRadioButton; i++) 
 		{ 
 			if (i != rbtnSeleccionado)
 			{
-				ok = false;//para no repetir opciones
-				while (ok == false)
-				{
-					elnumeroRandomOtros = Math.floor(Math.random()*(unasPalabrasDinamicas.length-1+1)+1) - 1;
-					var j;
-					for (j = 1; j <= cantidadRadioButton; j++) 
-					{ 
-						if (j != i)
-						{
-							if ($("#lrbtn" + j).text() != unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida)
-							{
-								ok = true;
-							}
-							else
-							{
-								ok = false;
-								break;
-							}
-						}
-					}
-					if(ok == true)		
-					{
-						$("#lrbtn" + i).text(unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida);
-						palabraUsada = { PalabraNativa:unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa	, PalabraTraducida:	unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida}; palabrasUsadas.push(palabraUsada);
-					}
-				}
+				elnumeroRandomRadioButton = Math.floor(Math.random()*(unasPalabrasRadioButtonDisponibles.length-1+1)+1) - 1;
+				unasPalabrasRadioButtonDisponibles.splice(elnumeroRandomRadioButton, 1); 
+	
+				$("#lrbtn" + i).text(unasPalabrasRadioButtonDisponibles[elnumeroRandomRadioButton].PalabraTraducida);
 			}
 		}
 	}
@@ -87,40 +68,30 @@ function PracticarUnoNuevo()
 		var image = document.getElementById('image');
 		image.src = 'img/ImagenesTeoricoLicenciaConducir/' + unasPalabras[elnumeroRandom].PalabraIngles + '.png';
 		//imagen		
-
-		var unasPalabrasDinamicas = unasPalabras;
+		
+		k = 0;
+		ok = false;	
+		
+		while (ok == false)
+		{
+			if(unasPalabrasRadioButtonDisponibles[k].PalabraNativa == unasPalabras[elnumeroRandom].PalabraNativa)
+			{
+				unasPalabrasRadioButtonDisponibles.splice(elnumeroRandom, 1); 
+				ok= true;
+			}
+			
+			k= k + 1;
+		}				
 		
 		var i;
 		for (i = 1; i <= cantidadRadioButton; i++) 
 		{ 
 			if (i != rbtnSeleccionado)
 			{
-				var ok = false;//para no repetir opciones
-				while (ok == false)
-				{
-					elnumeroRandomOtros = Math.floor(Math.random()*(unasPalabrasDinamicas.length-1+1)+1) - 1;
-					var j;
-					for (j = 1; j <= cantidadRadioButton; j++) 
-					{ 
-						if (j != i)
-						{
-							if ($("#lrbtn" + j).text() != unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa)
-							{
-								ok = true;
-							}
-							else
-							{
-								ok = false;
-								break;
-							}
-						}
-					}
-					if(ok == true)		
-					{
-						$("#lrbtn" + i).text(unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa);
-						palabraUsada = { PalabraNativa:unasPalabrasDinamicas[elnumeroRandomOtros].PalabraNativa	, PalabraTraducida:	unasPalabrasDinamicas[elnumeroRandomOtros].PalabraTraducida}; palabrasUsadas.push(palabraUsada);
-					}
-				}
+				elnumeroRandomRadioButton = Math.floor(Math.random()*(unasPalabrasRadioButtonDisponibles.length-1+1)+1) - 1;
+				unasPalabrasRadioButtonDisponibles.splice(elnumeroRandomRadioButton, 1); 
+	
+				$("#lrbtn" + i).text(unasPalabrasRadioButtonDisponibles[elnumeroRandomRadioButton].PalabraNativa);
 			}
 		}
 	}		
@@ -214,38 +185,25 @@ function Calificar()
 				Incorrecto();
 			}
 			
-			var estados = $("#lblEstado").text().split("/");
-			estados[1] = parseInt(estados[1]) + 1;
-			$("#lblEstado").text(estados[0] +"/" + estados[1]); 
+			$("#preguntasHechasCant").text(parseInt($("#preguntasHechasCant").text()) + 1);
+		
 	
 			unasPalabras.splice(elnumeroRandom, 1);
-			cantidadPalabras = unasPalabras.length;
 			
-			// if (int.Parse(estados[1])==10)
-			// {
-				// if (estados[0] == estados[1])
-				// {
-					// lblEstado.ForeColor = Color.Green;
-					
-				// }
-				// else
-				// {
-					// if ((int.Parse(estados[1]) - int.Parse(estados[0])) > 3)
-					// {
-						// if ((int.Parse(estados[1]) - int.Parse(estados[0])) > 6)
-						// {
-							// lblEstado.ForeColor = Color.Red;
-						// }
-						// else
-						// {
-							// lblEstado.ForeColor = Color.Khaki;
-						// }
+			if (parseInt($("#preguntasHechasCant").text()) != STOPTEMPORAL)
+			{
+				document.getElementById("btnCalificar").value ="Continuar";
+			}
+			else
+			{	
+				$("#btnCalificar").hide();
+				
+				var porcentajeFinal = (100/STOPTEMPORAL) * parseInt($("#correctasCant").text());
+				porcentajeFinal = Math.ceil(porcentajeFinal * 100) / 100;
+				$("#preguntasHechasCant").text($("#preguntasHechasCant").text() + " - " + porcentajeFinal + " % de Exactitud");
+			}
 
-					// }
-				// }
-			// }
-
-			document.getElementById("btnCalificar").value ="Continuar";
+			
 	}
 	else
 	{
@@ -347,18 +305,18 @@ function Correcto()
 	document.getElementById("lblSeleccionado").style.color ="green";
 	document.getElementById("lblResultado").style.color ="green";
 	$("#lblResultado").text("Excelente!");
-
-    var estados = $("#lblEstado").text().split("/");
-	estados[0] = parseInt(estados[0]) + 1;
-	$("#lblEstado").text(estados[0] +"/" + estados[1]); 
-		
+	
+	$("#correctasCant").text(parseInt($("#correctasCant").text()) + 1);
+	
+	
+	document.getElementById("lblResultado").style.color ="green";
 }
 	
 function Incorrecto() 
 {
 	document.getElementById("lblSeleccionado").style.color ="red";
 	document.getElementById("lblResultado").style.color ="red";
-	$("#lblResultado").text("    Mal");
+	$("#lblResultado").text("Mal");
 
 	if (seleccionadoNativo == 0)
 	{
