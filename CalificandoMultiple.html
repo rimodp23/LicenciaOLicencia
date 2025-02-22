@@ -1,76 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>RIMO DICCIONARIO</title>
-    <meta name="GENERATOR" Content="form.suite4.net">
-    <meta name="CODE_LANGUAGE" Content="C#">
-    <meta name="vs_defaultClientScript" content="JavaScript">
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Licencia o Licencia</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/my-app.css">
 </head>
-<body MS_POSITIONING="GridLayout">
-    <div class="container">
-        <div class="row justify-content-center">
-                <img id="image" src="" class="" style="height: 200px">
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <span id="lblResultado" style="display:inline-block;height:22px;width:81px;z-index:100; left:23px; top:86px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;"></span>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <span id="lblEstado" class="display-4">0/1</span>
-            </div>
-        </div>
+<body class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="text-center">
+			<div class="row justify-content-center">
+					<img id="image" src="" class="" style="height: 200px">
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-12 text-center">
+					<span id="lblResultado" style="display:inline-block;height:22px;width:81px;z-index:100; left:23px; top:86px; font-family:'Microsoft Sans Serif'; font-size:40pt; position:absolute;"></span>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-12 text-center">
+					<span id="correctasCant" style="color: green;font-size: 3.5rem">0</span>
+					<span style="font-size: 1.5rem"> correctas de </span>
+					<span id="preguntasHechasCant" style="color: black;font-size: 3.5rem">0</span>
+				</div>
+			</div>
 
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <fieldset class="border p-2">
-                    <legend class="w-auto">Opciones</legend>
-                    <div class="form-check">
-                        <input id="rbtn1" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
-                        <label id="lrbtn1" class="form-check-label h4" style="margin-left:40px": 60px></label>
-                    </div>
-                    <div class="form-check">
-                        <input id="rbtn2" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
-                        <label id="lrbtn2" class="form-check-label h4" style="margin-left:40px"></label>
-                    </div>
-                    <div class="form-check">
-                        <input id="rbtn3" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
-                        <label id="lrbtn3" class="form-check-label h4" style="margin-left:40px"></label>
-                    </div>
-                    <div class="form-check">
-                        <input id="rbtn4" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
-                        <label id="lrbtn4" class="form-check-label h4" style="margin-left:40px"></label>
-                    </div>
-                    <div class="form-check">
-                        <input id="rbtn5" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
-                        <label id="lrbtn5" class="form-check-label h4" style="margin-left:40px"></label>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<fieldset class="border p-2">
+						<legend class="w-auto">Opciones</legend>
+						<div class="form-check">
+							<input id="rbtn1" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+							<label id="lrbtn1" class="form-check-label h4" style="margin-left:40px": 60px></label>
+						</div>
+						<div class="form-check">
+							<input id="rbtn2" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+							<label id="lrbtn2" class="form-check-label h4" style="margin-left:40px"></label>
+						</div>
+						<div class="form-check">
+							<input id="rbtn3" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+							<label id="lrbtn3" class="form-check-label h4" style="margin-left:40px"></label>
+						</div>
+						<div class="form-check">
+							<input id="rbtn4" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+							<label id="lrbtn4" class="form-check-label h4" style="margin-left:40px"></label>
+						</div>
+						<div class="form-check">
+							<input id="rbtn5" class="form-check-input" style="margin: 12px" type="radio" name="options" onchange="radioChanged($(this))">
+							<label id="lrbtn5" class="form-check-label h4" style="margin-left:40px"></label>
+						</div>
+					</fieldset>
+				</div>
+			</div>
 
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <span id="lblSeleccionado" class="display-4 font-weight-bold"></span>
-            </div>
-        </div>
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<span id="lblSeleccionado" class="display-4 font-weight-bold"></span>
+				</div>
+			</div>
 
-        <div class="row justify-content-center">
-            <div class="col-auto">
-                <input type="button" class="btn btn-primary btn-lg" onclick="Calificar()" name="btnCalificar" value="Calificar" id="btnCalificar" />
-            </div>
-        </div>
-    </div>
+			<div class="row justify-content-center">
+				<div class="col-auto">
+					<input type="button" class="btn btn-primary btn-lg" onclick="Calificar()" name="btnCalificar" value="Calificar" id="btnCalificar" />
+				</div>
+			</div>
+  </div>
 
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-         var r = document.createElement('script');
+  <!-- jQuery y Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script type="text/javascript">
+      window.onload = function() {
+      document.getElementById("btnCalificar").focus();
+    };
+	
+        var r = document.createElement('script');
 		var s = document.createElement('script');
 		var url_string = window.location.href;
 		var url = new URL(url_string);
@@ -112,11 +118,8 @@
 
 		document.body.appendChild(r);
         document.body.appendChild(s);
-    </script
-<script type="text/javascript" src="js/framework7.js"></script>
-    <script type="text/javascript" src="js/kitchen-sink.js"></script>
-	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+  </script>
 </body>
 </html>
+
+
